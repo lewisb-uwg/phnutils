@@ -7,21 +7,6 @@ class TestNormalize(unittest.TestCase):
   def testShouldNormalizeNumberWithDotSeparator(self):
     result = normalize("678.839.6663")
     self.assertEqual("6788396663", result)
-    
-  def testShouldNormalizeNumberWithDashSeparator(self):
-    result = normalize("678-839-6663")
-    self.assertEqual("6788396663", result)
-    
-  def testShouldNormalizeNumberWithBackslashSeparator(self):
-    result = normalize("678/839/6663")
-    self.assertEqual("6788396663", result)
-    
-  def testShouldNormalizeNumberWithAreaCodeInParens(self):
-    result = normalize("(678) 839-6663")
-    self.assertEqual("6788396663", result)
-    
-  def testShouldNotNormalizeNone(self):
-    self.assertFalse(normalize(None))
 
 class TestIsValid(unittest.TestCase):
 
